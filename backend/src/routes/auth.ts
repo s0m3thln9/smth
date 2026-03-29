@@ -23,7 +23,7 @@ const setAuthCookie = (res: Response, token: string): void => {
 
 router.post(
 	"/register",
-	async (req: Request<object, object, RegisterBody>, res) => {
+	async (req: Request<Record<string, string>, unknown, RegisterBody>, res) => {
 		const { email, password, username } = req.body;
 		if (!email || !password || !username) {
 			res.status(400).json({ message: t(req, "allFieldsRequired") });
@@ -50,7 +50,7 @@ router.post(
 
 router.post(
 	"/login",
-	async (req: Request<object, object, LoginBody>, res) => {
+	async (req: Request<Record<string, string>, unknown, LoginBody>, res) => {
 		const { email, password } = req.body;
 		if (!email || !password) {
 			res.status(400).json({ message: t(req, "emailPasswordRequired") });
