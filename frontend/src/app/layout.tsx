@@ -1,6 +1,9 @@
+import { Box, Container } from "@mui/material";
 import type { Metadata } from "next";
 import { Nunito, Syne } from "next/font/google";
 import { cookies } from "next/headers";
+import { Footer } from "@/widgets/footer";
+import { Header } from "@/widgets/header";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import type { ReactNode } from "react";
@@ -24,9 +27,7 @@ export const metadata: Metadata = {
 	title: "SMTH",
 };
 
-const RootLayout = async ({
-	children,
-}: Readonly<{ children: ReactNode }>) => {
+const RootLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
 	const cookieStore = await cookies();
 	const theme = parseTheme(cookieStore.get("theme")?.value);
 	const language = parseLanguage(cookieStore.get("language")?.value);
@@ -45,14 +46,28 @@ const RootLayout = async ({
 
 	return (
 		<html lang={language} className={`${nunito.variable} ${syne.variable}`}>
-			<body className="antialiased">
+			<body>
 				<AppRouterCacheProvider>
 					<Providers
 						initialTheme={theme}
 						initialLanguage={language}
 						initialUser={initialUser}
 					>
-						{children}
+						<Box
+							sx={{
+								display: "flex",
+								flexDirection: "column",
+								minHeight: "100vh",
+							}}
+						>
+							<Container maxWidth="lg">
+								<Header />
+							</Container>
+							<Box component="main" sx={{ flex: 1 }}>
+								{children}
+							</Box>
+							<Footer />
+						</Box>
 					</Providers>
 				</AppRouterCacheProvider>
 			</body>
