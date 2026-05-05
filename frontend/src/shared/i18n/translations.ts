@@ -24,6 +24,58 @@ const ru = {
 		light: "Светлая",
 		dark: "Тёмная",
 	},
+	nav: {
+		home: "Главная",
+		finance: "Финансы",
+		events: "События",
+		wishlist: "Вишлист",
+		menu: "Меню",
+	},
+	home: {
+		heroBadge: "Платформа для людей",
+		heroTitle: "Всё важное — в одном месте",
+		heroSubtitle:
+			"Учёт финансов, планирование событий и общие вишлисты для групп и личного использования. Просто, удобно, без лишнего.",
+		heroCtaPrimary: "Начать бесплатно",
+		heroCtaSecondary: "Узнать больше",
+		modulesTitle: "Три модуля — одна платформа",
+		modulesSubtitle: "Используй то что нужно тебе или твоей группе",
+		financeTitle: "Финансы",
+		financeDesc:
+			"Удобный учёт доходов и расходов с категориями, тегами и наглядной аналитикой. Личный или совместный бюджет.",
+		eventsTitle: "События",
+		eventsDesc:
+			"Планировщик встреч и задач — для группы друзей, коллег или себя одного. Напоминания и совместные ответы.",
+		wishlistTitle: "Вишлист",
+		wishlistDesc:
+			"Создавай списки желаний и делись ими. Друзья видят что подарить, ты не получаешь дубли.",
+		audienceTitle: "Для тех, кто организует жизнь",
+		audienceSubtitle: "Подходит для разных сценариев",
+		audienceGroupsTitle: "Для групп",
+		audienceGroupsDesc:
+			"Семья, друзья, коллеги — общий бюджет, события и подарки в одном пространстве.",
+		audienceSoloTitle: "Для себя",
+		audienceSoloDesc:
+			"Личный финансовый дневник, расписание и список желаний — без лишних сложностей.",
+		ctaTitle: "Готов попробовать?",
+		ctaSubtitle: "Регистрация занимает меньше минуты",
+		ctaButton: "Создать аккаунт",
+	},
+	footer: {
+		tagline: "Платформа для жизни в группах и для себя",
+		productHeading: "Продукт",
+		productFinance: "Финансы",
+		productEvents: "События",
+		productWishlist: "Вишлист",
+		resourcesHeading: "Ресурсы",
+		resourcesAbout: "О проекте",
+		resourcesDocs: "Документация",
+		resourcesContact: "Контакты",
+		legalHeading: "Правовая информация",
+		legalTerms: "Условия использования",
+		legalPrivacy: "Конфиденциальность",
+		copyright: "Все права защищены",
+	},
 };
 
 const en: Translations = {
@@ -51,6 +103,58 @@ const en: Translations = {
 	settings: {
 		light: "Light",
 		dark: "Dark",
+	},
+	nav: {
+		home: "Home",
+		finance: "Finance",
+		events: "Events",
+		wishlist: "Wishlist",
+		menu: "Menu",
+	},
+	home: {
+		heroBadge: "A platform for people",
+		heroTitle: "Everything that matters — in one place",
+		heroSubtitle:
+			"Track finances, plan events, and share wishlists — for groups or personal use. Simple, useful, no fluff.",
+		heroCtaPrimary: "Get started for free",
+		heroCtaSecondary: "Learn more",
+		modulesTitle: "Three modules — one platform",
+		modulesSubtitle: "Use what works for you or your group",
+		financeTitle: "Finance",
+		financeDesc:
+			"Track income and expenses with categories, tags, and clean analytics. Personal or shared budgets.",
+		eventsTitle: "Events",
+		eventsDesc:
+			"A planner for meetups and tasks — for a group or just yourself. Reminders and group RSVPs.",
+		wishlistTitle: "Wishlist",
+		wishlistDesc:
+			"Create wishlists and share them. Friends know what to gift, you don't get duplicates.",
+		audienceTitle: "For people who organize their life",
+		audienceSubtitle: "Works for different use cases",
+		audienceGroupsTitle: "For groups",
+		audienceGroupsDesc:
+			"Family, friends, coworkers — shared budgets, events, and gifts in one space.",
+		audienceSoloTitle: "For yourself",
+		audienceSoloDesc:
+			"Personal finance log, schedule, and wishlist — without the bloat.",
+		ctaTitle: "Ready to try?",
+		ctaSubtitle: "Sign up takes less than a minute",
+		ctaButton: "Create account",
+	},
+	footer: {
+		tagline: "A platform for life in groups and for yourself",
+		productHeading: "Product",
+		productFinance: "Finance",
+		productEvents: "Events",
+		productWishlist: "Wishlist",
+		resourcesHeading: "Resources",
+		resourcesAbout: "About",
+		resourcesDocs: "Documentation",
+		resourcesContact: "Contact",
+		legalHeading: "Legal",
+		legalTerms: "Terms of use",
+		legalPrivacy: "Privacy",
+		copyright: "All rights reserved",
 	},
 };
 

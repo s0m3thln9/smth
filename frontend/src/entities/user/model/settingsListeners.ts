@@ -6,9 +6,7 @@ import {
 	setTheme,
 	toggleTheme,
 } from "./settingsSlice";
-import type { SettingsState } from "./types";
-
-type StateWithSettings = { settings: SettingsState };
+import type { StateWithSettings } from "./types";
 
 export const settingsListenerMiddleware = createListenerMiddleware();
 

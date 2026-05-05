@@ -26,3 +26,5 @@ export interface SettingsState {
 	language: Language;
 	isSyncing: boolean;
 }
+
+export type StateWithSettings = { settings: SettingsState };

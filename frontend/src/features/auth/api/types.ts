@@ -1,7 +1,7 @@
 import type { User } from "@/entities/user/model/types";
 
 export interface LoginCredentials {
-	email: string;
+	identifier: string;
 	password: string;
 }
 
