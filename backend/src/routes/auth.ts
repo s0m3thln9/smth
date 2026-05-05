@@ -51,12 +51,15 @@ router.post(
 router.post(
 	"/login",
 	async (req: Request<Record<string, string>, unknown, LoginBody>, res) => {
-		const { email, password } = req.body;
-		if (!email || !password) {
-			res.status(400).json({ message: t(req, "emailPasswordRequired") });
+		const { identifier, password } = req.body;
+		if (!identifier || !password) {
+			res.status(400).json({ message: t(req, "identifierPasswordRequired") });
 			return;
 		}
-		const user = await prisma.user.findUnique({ where: { email } });
+		const isEmail = identifier.includes("@");
+		const user = await prisma.user.findFirst({
+			where: isEmail ? { email: identifier } : { username: identifier },
+		});
 		if (!user || !(await bcrypt.compare(password, user.passwordHash))) {
 			res.status(401).json({ message: t(req, "invalidCredentials") });
 			return;

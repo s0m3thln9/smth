@@ -3,7 +3,7 @@ import type { Request } from "express";
 const messages = {
 	ru: {
 		allFieldsRequired: "email, password, username обязательны",
-		emailPasswordRequired: "email и password обязательны",
+		identifierPasswordRequired: "email/username и password обязательны",
 		emailOrUsernameTaken: "Email или username уже заняты",
 		invalidCredentials: "Неверный email или пароль",
 		notFound: "Пользователь не найден",
@@ -12,7 +12,7 @@ const messages = {
 	},
 	en: {
 		allFieldsRequired: "email, password, username are required",
-		emailPasswordRequired: "email and password are required",
+		identifierPasswordRequired: "email/username and password are required",
 		emailOrUsernameTaken: "Email or username already taken",
 		invalidCredentials: "Invalid email or password",
 		notFound: "User not found",
