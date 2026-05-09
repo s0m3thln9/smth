@@ -19,7 +19,9 @@ export const authenticate = (
 	res: Response,
 	next: NextFunction,
 ): void => {
-	const token: string | undefined = req.cookies?.accessToken;
+	const authHeader = req.headers.authorization;
+	const token: string | undefined =
+		authHeader?.startsWith("Bearer ") ? authHeader.slice(7) : req.cookies?.accessToken;
 	if (!token) {
 		res.status(401).json({ message: "No token provided" });
 		return;

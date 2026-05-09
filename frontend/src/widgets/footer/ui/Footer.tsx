@@ -1,5 +1,3 @@
-"use client";
-
 import {
 	Box,
 	Container,
@@ -9,37 +7,12 @@ import {
 	Typography,
 } from "@mui/material";
 import NextLink from "next/link";
-import { useT } from "@/shared/i18n";
+import { getT } from "@/shared/i18n";
+import { FOOTER_COLUMNS } from "../config/footerColumns";
 
-const Footer = () => {
-	const t = useT();
+const Footer = async () => {
+	const t = await getT();
 	const year = new Date().getFullYear();
-
-	const columns = [
-		{
-			heading: t.footer.productHeading,
-			links: [
-				{ label: t.footer.productFinance, href: "/finance" },
-				{ label: t.footer.productEvents, href: "/events" },
-				{ label: t.footer.productWishlist, href: "/wishlist" },
-			],
-		},
-		{
-			heading: t.footer.resourcesHeading,
-			links: [
-				{ label: t.footer.resourcesAbout, href: "/about" },
-				{ label: t.footer.resourcesDocs, href: "/docs" },
-				{ label: t.footer.resourcesContact, href: "/contact" },
-			],
-		},
-		{
-			heading: t.footer.legalHeading,
-			links: [
-				{ label: t.footer.legalTerms, href: "/terms" },
-				{ label: t.footer.legalPrivacy, href: "/privacy" },
-			],
-		},
-	];
 
 	return (
 		<Box
@@ -69,14 +42,14 @@ const Footer = () => {
 						gap={{ xs: 3, sm: 6 }}
 						flexWrap="wrap"
 					>
-						{columns.map((col) => (
-							<Stack key={col.heading} gap={1.25} sx={{ minWidth: 140 }}>
+						{FOOTER_COLUMNS.map((col) => (
+							<Stack key={col.headingKey} gap={1.25} sx={{ minWidth: 140 }}>
 								<Typography
 									variant="overline"
 									color="text.secondary"
 									sx={{ letterSpacing: 1 }}
 								>
-									{col.heading}
+									{t.footer[col.headingKey]}
 								</Typography>
 								{col.links.map((link) => (
 									<MuiLink
@@ -87,7 +60,7 @@ const Footer = () => {
 										color="text.primary"
 										sx={{ fontSize: 14, "&:hover": { color: "primary.main" } }}
 									>
-										{link.label}
+										{t.footer[link.labelKey]}
 									</MuiLink>
 								))}
 							</Stack>

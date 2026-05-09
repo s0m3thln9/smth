@@ -3,27 +3,13 @@
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { IconButton } from "@mui/material";
-import { toggleTheme, useUpdateSettingsMutation } from "@/entities/user";
-import { useAppDispatch, useAppSelector } from "@/shared/store";
+import { useThemeToggle } from "@/entities/user/model/useThemeToggle";
 
 export const ThemeToggle = () => {
-	const theme = useAppSelector((state) => state.settings.theme);
-	const isAuthenticated = useAppSelector((state) => state.user.isAuthenticated);
-	const dispatch = useAppDispatch();
-	const [updateSettings] = useUpdateSettingsMutation();
-
-	const handleToggleTheme = () => {
-		const next = theme === "light" ? "dark" : "light";
-		dispatch(toggleTheme());
-		if (isAuthenticated) updateSettings({ theme: next });
-	};
+	const { theme, toggle } = useThemeToggle();
 
 	return (
-		<IconButton
-			onClick={handleToggleTheme}
-			size="small"
-			aria-label="toggle theme"
-		>
+		<IconButton onClick={toggle} size="small" aria-label="toggle theme">
 			{theme === "dark" ? (
 				<LightModeIcon fontSize="small" />
 			) : (

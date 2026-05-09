@@ -1,12 +1,10 @@
-"use client";
-
 import SavingsIcon from "@mui/icons-material/Savings";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import NextLink from "next/link";
-import { useT } from "@/shared/i18n";
+import { getT } from "@/shared/i18n";
 
-const FinancePage = () => {
-	const t = useT();
+const FinancePage = async () => {
+	const t = await getT();
 
 	return (
 		<Container

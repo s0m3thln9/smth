@@ -1,12 +1,10 @@
-"use client";
-
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import NextLink from "next/link";
-import { useT } from "@/shared/i18n";
+import { getT } from "@/shared/i18n";
 
-const EventsPage = () => {
-	const t = useT();
+const EventsPage = async () => {
+	const t = await getT();
 
 	return (
 		<Container

@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { userApi } from "@/entities/user/api/userApi";
 import { settingsListenerMiddleware } from "@/entities/user/model/settingsListeners";
 import { settingsSlice } from "@/entities/user/model/settingsSlice";
-import type { User } from "@/entities/user/model/types";
+import type { User } from "@/shared/types";
 import { userSlice } from "@/entities/user/model/userSlice";
 import { authApi } from "@/features/auth/api/authApi";
 import type { Language, ThemeMode } from "@/shared/types";

@@ -37,7 +37,7 @@ const RootLayout = async ({ children }: Readonly<{ children: ReactNode }>) => {
 	if (accessToken) {
 		try {
 			const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/me`, {
-				headers: { Cookie: `accessToken=${accessToken}` },
+				headers: { Authorization: `Bearer ${accessToken}` },
 				cache: "no-store",
 			});
 			if (res.ok) initialUser = await res.json();

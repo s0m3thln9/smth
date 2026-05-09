@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { User } from "@/entities/user/model/types";
+import type { User } from "@/shared/types";
 import type { Language, ThemeMode } from "@/shared/types";
 import { StoreProvider } from "./StoreProvider";
 import { ThemeProvider } from "./ThemeProvider";

@@ -1,5 +1,6 @@
 import { createListenerMiddleware } from "@reduxjs/toolkit";
 import Cookies from "js-cookie";
+import { COOKIE_OPTIONS as OPTS } from "@/shared/config/cookies";
 import {
 	setLanguage,
 	setSettingsFromServer,
@@ -12,8 +13,6 @@ export const settingsListenerMiddleware = createListenerMiddleware();
 
 const listen =
 	settingsListenerMiddleware.startListening.withTypes<StateWithSettings>();
-
-const OPTS = { expires: 365, path: "/", sameSite: "lax" } as const;
 
 listen({
 	actionCreator: toggleTheme,

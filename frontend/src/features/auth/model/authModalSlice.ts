@@ -12,7 +12,7 @@ export const authModalSlice = createSlice({
 	reducers: {
 		openAuthModal: (state, action: PayloadAction<AuthModalMode>) => {
 			state.isOpen = true;
-			state.mode = action.payload.mode;
+			state.mode = action.payload;
 		},
 		closeAuthModal: (state) => {
 			state.isOpen = false;

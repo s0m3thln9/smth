@@ -2,7 +2,7 @@
 import type { ReactNode } from "react";
 import { useRef } from "react";
 import { Provider } from "react-redux";
-import type { User } from "@/entities/user/model/types";
+import type { User } from "@/shared/types";
 import { type AppStore, makeStore } from "@/shared/store";
 import type { Language, ThemeMode } from "@/shared/types";
 

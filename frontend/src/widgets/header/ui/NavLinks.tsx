@@ -4,6 +4,7 @@ import { Stack } from "@mui/material";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { useT } from "@/shared/i18n";
+import { NAV_LINKS } from "../config/navLinks";
 
 type NavLinksProps = {
 	direction?: "row" | "column";
@@ -14,13 +15,6 @@ export const NavLinks = ({ direction = "row", onNavigate }: NavLinksProps) => {
 	const t = useT();
 	const pathname = usePathname();
 
-	const links = [
-		{ href: "/", label: t.nav.home },
-		{ href: "/finance", label: t.nav.finance },
-		{ href: "/events", label: t.nav.events },
-		{ href: "/wishlist", label: t.nav.wishlist },
-	];
-
 	return (
 		<Stack
 			component="nav"
@@ -28,7 +22,7 @@ export const NavLinks = ({ direction = "row", onNavigate }: NavLinksProps) => {
 			gap={direction === "row" ? 3 : 1.5}
 			sx={{ alignItems: direction === "row" ? "center" : "stretch" }}
 		>
-			{links.map((link) => {
+			{NAV_LINKS.map((link) => {
 				const active =
 					link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
 				return (
@@ -45,7 +39,7 @@ export const NavLinks = ({ direction = "row", onNavigate }: NavLinksProps) => {
 							fontSize: 15,
 						}}
 					>
-						{link.label}
+						{t.nav[link.labelKey]}
 					</NextLink>
 				);
 			})}

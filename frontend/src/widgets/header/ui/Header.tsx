@@ -11,8 +11,8 @@ import {
 	Typography,
 } from "@mui/material";
 import NextLink from "next/link";
-import { useState } from "react";
 import { useT } from "@/shared/i18n";
+import { useMobileDrawer } from "../model/useMobileDrawer";
 import { LanguageSelect } from "./LanguageSelect";
 import { NavLinks } from "./NavLinks";
 import { ThemeToggle } from "./ThemeToggle";
@@ -20,7 +20,7 @@ import { UserMenu } from "./UserMenu";
 
 export const Header = () => {
 	const t = useT();
-	const [open, setOpen] = useState(false);
+	const { open, onOpen, onClose } = useMobileDrawer();
 
 	return (
 		<Box
@@ -62,7 +62,7 @@ export const Header = () => {
 			</Stack>
 
 			<IconButton
-				onClick={() => setOpen(true)}
+				onClick={onOpen}
 				sx={{ display: { xs: "inline-flex", md: "none" } }}
 				aria-label={t.nav.menu}
 			>
@@ -72,7 +72,7 @@ export const Header = () => {
 			<Drawer
 				anchor="right"
 				open={open}
-				onClose={() => setOpen(false)}
+				onClose={onClose}
 				slotProps={{ paper: { sx: { width: 280 } } }}
 			>
 				<Stack sx={{ p: 2 }} gap={2}>
@@ -82,18 +82,14 @@ export const Header = () => {
 						alignItems="center"
 					>
 						<Typography variant="h4">{t.nav.menu}</Typography>
-						<IconButton
-							onClick={() => setOpen(false)}
-							size="small"
-							aria-label="close"
-						>
+						<IconButton onClick={onClose} size="small" aria-label="close">
 							<CloseIcon />
 						</IconButton>
 					</Stack>
 
 					<Divider />
 
-					<NavLinks direction="column" onNavigate={() => setOpen(false)} />
+					<NavLinks direction="column" onNavigate={onClose} />
 
 					<Divider />
 

@@ -4,6 +4,8 @@ export {
 	useUpdateProfileMutation,
 	useUpdateSettingsMutation,
 } from "./api/userApi";
+export { useLanguage } from "./model/useLanguage";
+export { useThemeToggle } from "./model/useThemeToggle";
 export { settingsListenerMiddleware } from "./model/settingsListeners";
 export {
 	setLanguage,

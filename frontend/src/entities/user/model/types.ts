@@ -1,19 +1,7 @@
 import type { Language, ThemeMode } from "@/shared/types";
+import type { User, UserSettings } from "@/shared/types";
 
-export interface UserSettings {
-	theme: ThemeMode;
-	language: Language;
-}
-
-export interface User {
-	id: string;
-	email: string;
-	username: string;
-	displayName: string;
-	avatarUrl: string | null;
-	createdAt: string;
-	settings: UserSettings;
-}
+export type { User, UserSettings };
 
 export interface UserState {
 	profile: User | null;
