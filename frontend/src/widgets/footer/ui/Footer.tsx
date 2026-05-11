@@ -1,14 +1,7 @@
-import {
-	Box,
-	Container,
-	Divider,
-	Link as MuiLink,
-	Stack,
-	Typography,
-} from "@mui/material";
-import NextLink from "next/link";
-import { getT } from "@/shared/i18n";
+import { Box, Container, Divider, Stack, Typography } from "@mui/material";
+import { getT } from "@/shared/i18n/server";
 import { FOOTER_COLUMNS } from "../config/footerColumns";
+import { FooterLink } from "./FooterLink";
 
 const Footer = async () => {
 	const t = await getT();
@@ -52,16 +45,9 @@ const Footer = async () => {
 									{t.footer[col.headingKey]}
 								</Typography>
 								{col.links.map((link) => (
-									<MuiLink
-										key={link.href}
-										component={NextLink}
-										href={link.href}
-										underline="hover"
-										color="text.primary"
-										sx={{ fontSize: 14, "&:hover": { color: "primary.main" } }}
-									>
+									<FooterLink key={link.href} href={link.href}>
 										{t.footer[link.labelKey]}
-									</MuiLink>
+									</FooterLink>
 								))}
 							</Stack>
 						))}
