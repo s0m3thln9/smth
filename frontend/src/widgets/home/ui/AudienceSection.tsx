@@ -1,7 +1,7 @@
 import GroupsIcon from "@mui/icons-material/Groups";
 import PersonIcon from "@mui/icons-material/Person";
 import { Box, Card, CardContent, Container, Stack, Typography } from "@mui/material";
-import { getT } from "@/shared/i18n";
+import { getT } from "@/shared/i18n/server";
 
 export const AudienceSection = async () => {
 	const t = await getT();

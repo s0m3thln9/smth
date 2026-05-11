@@ -2,7 +2,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import SavingsIcon from "@mui/icons-material/Savings";
 import { Box, Card, CardContent, Container, Stack, Typography } from "@mui/material";
-import { getT } from "@/shared/i18n";
+import { getT } from "@/shared/i18n/server";
 
 export const ModulesSection = async () => {
 	const t = await getT();

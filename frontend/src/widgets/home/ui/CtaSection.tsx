@@ -1,5 +1,5 @@
 import { Button, Card, Container, Stack, Typography } from "@mui/material";
-import { getT } from "@/shared/i18n";
+import { getT } from "@/shared/i18n/server";
 
 export const CtaSection = async () => {
 	const t = await getT();

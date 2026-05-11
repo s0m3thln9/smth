@@ -1,5 +1,5 @@
 import { Button, Chip, Container, Stack, Typography } from "@mui/material";
-import { getT } from "@/shared/i18n";
+import { getT } from "@/shared/i18n/server";
 
 export const HeroSection = async () => {
 	const t = await getT();

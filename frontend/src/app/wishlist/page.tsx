@@ -1,7 +1,7 @@
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import NextLink from "next/link";
-import { getT } from "@/shared/i18n";
+import { getT } from "@/shared/i18n/server";
 
 const WishlistPage = async () => {
 	const t = await getT();
