@@ -2,10 +2,10 @@ import { configureStore } from "@reduxjs/toolkit";
 import { userApi } from "@/entities/user/api/userApi";
 import { settingsListenerMiddleware } from "@/entities/user/model/settingsListeners";
 import { settingsSlice } from "@/entities/user/model/settingsSlice";
-import type { User } from "@/shared/types";
 import { userSlice } from "@/entities/user/model/userSlice";
 import { authApi } from "@/features/auth/api/authApi";
-import type { Language, ThemeMode } from "@/shared/types";
+import { authModalSlice } from "@/features/auth/model/authModalSlice";
+import type { Language, ThemeMode, User } from "@/shared/types";
 
 export interface PreloadedSettings {
 	theme?: ThemeMode;
@@ -18,6 +18,7 @@ export const makeStore = (preloaded?: PreloadedSettings) =>
 		reducer: {
 			user: userSlice.reducer,
 			settings: settingsSlice.reducer,
+			authModal: authModalSlice.reducer,
 			[userApi.reducerPath]: userApi.reducer,
 			[authApi.reducerPath]: authApi.reducer,
 		},

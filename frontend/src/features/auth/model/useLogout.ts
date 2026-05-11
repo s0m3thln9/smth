@@ -10,7 +10,9 @@ export const useLogout = () => {
 	const [logoutMutation] = useLogoutMutation();
 
 	const logout = async () => {
-		await logoutMutation().unwrap().catch(() => {});
+		await logoutMutation()
+			.unwrap()
+			.catch(() => {});
 		dispatch(clearUser());
 	};
 

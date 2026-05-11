@@ -11,6 +11,7 @@ import {
 	Typography,
 } from "@mui/material";
 import NextLink from "next/link";
+import { AuthModal, useAuthRedirect } from "@/features/auth";
 import { useT } from "@/shared/i18n";
 import { useMobileDrawer } from "../model/useMobileDrawer";
 import { LanguageSelect } from "./LanguageSelect";
@@ -21,6 +22,7 @@ import { UserMenu } from "./UserMenu";
 export const Header = () => {
 	const t = useT();
 	const { open, onOpen, onClose } = useMobileDrawer();
+	useAuthRedirect();
 
 	return (
 		<Box
@@ -105,6 +107,8 @@ export const Header = () => {
 					</Stack>
 				</Stack>
 			</Drawer>
+
+			<AuthModal />
 		</Box>
 	);
 };
